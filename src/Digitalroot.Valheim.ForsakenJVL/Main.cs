@@ -30,7 +30,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     public Main()
     {
       Instance = this;
-      NexusId = Config.Bind("General", "NexusID", 000, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { IsAdminOnly = false, Browsable = false, ReadOnly = true }));
+      NexusId = Config.Bind("General", "NexusID", 1538, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { IsAdminOnly = false, Browsable = false, ReadOnly = true }));
 #if DEBUG
       EnableTrace = true;
       Log.RegisterSource(Instance);
