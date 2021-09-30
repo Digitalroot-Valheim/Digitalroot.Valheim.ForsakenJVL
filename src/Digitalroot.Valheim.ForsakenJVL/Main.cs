@@ -19,7 +19,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin, ITraceableLogging
   {
-    public const string Version = "1.0.0";
+    public const string Version = "1.1.0";
     public const string Name = "Digitalroot ForsakenJVL";
     public const string Guid = "digitalroot.valheim.mods.forsaken.jvl";
     public const string Namespace = "Digitalroot.Valheim." + nameof(ForsakenJVL);
@@ -123,7 +123,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
 
         itemDrop.m_itemData.m_shared.m_name = "$item_forsaken_spellfire";
         itemDrop.m_itemData.m_shared.m_description = "$item_forsaken_spellfire_description";
-        itemDrop.m_itemData.m_shared.m_itemType = ItemDrop.ItemData.ItemType.Shield;
+        itemDrop.m_itemData.m_shared.m_itemType = ItemDrop.ItemData.ItemType.OneHandedWeapon;
         itemDrop.m_itemData.m_shared.m_maxStackSize = 1;
         itemDrop.m_itemData.m_shared.m_maxQuality = 4;
         itemDrop.m_itemData.m_shared.m_weight = 0.1f;
