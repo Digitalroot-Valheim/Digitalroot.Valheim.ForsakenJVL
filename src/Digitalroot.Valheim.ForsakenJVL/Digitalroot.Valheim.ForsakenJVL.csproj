@@ -398,15 +398,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".ts\manifest.json" />
     <None Include="Assets\Translations\English\translations.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="FodyWeavers.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="forsakenmod">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="forsakenmod" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -415,6 +414,8 @@
     <Analyzer Include="..\packages\ErrorProne.NET.CoreAnalyzers.0.1.2\analyzers\dotnet\cs\RuntimeContracts.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".nx\description.bbcode.txt" />
+    <Content Include=".ts\icon.png" />
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -443,9 +444,9 @@
     <Message Text="RefreshVars Called" Importance="high" />
     <ItemGroup>
       <DigitalrootSourceFiles Include="$(TargetDir)**\*.*" />
-    </ItemGroup>
-    <ItemGroup>
       <DigitalrootBuildFiles Include="$(TargetDir)..\$(ProjectName)\$(ProjectName)\$(ProjectName).dll" />
+      <DigitalrootTSIOFiles Include="$(ProjectDir).ts\*.*" />
+      <DigitalrootReadMeFile Include="$(SolutionDir)..\docs\README.md" />
     </ItemGroup>
   </Target>
   <Target Name="DebugPostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Debug'" DependsOnTargets="RefreshVars">
@@ -470,6 +471,31 @@
     <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
     <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" Importance="high" />
     <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).zip" />
+  </Target>
+  <Target Name="ReleasePostBuildTS" AfterTargets="ReleasePostBuild" Condition="'$(Configuration)' == 'Release'" DependsOnTargets="RefreshVars">
+    <Message Text="ReleasePostBuildTS Called" Importance="high" />
+    <Message Text="Deleting files from $(TargetDir)..\$(ProjectName)TS" Importance="high" />
+    <Delete Files="$(TargetDir)..\$(ProjectName)TS\**\*.*" />
+    <MakeDir Directories="$(TargetDir)..\$(ProjectName)TS\plugins" />
+    <Message Text="Copying @(DigitalrootSourceFiles) to $(TargetDir)..\$(ProjectName)TS\plugins" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootSourceFiles)" DestinationFiles="@(DigitalrootSourceFiles->'$(TargetDir)..\$(ProjectName)TS\plugins\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Message Text="Copying @(DigitalrootTSIOFiles) to $(TargetDir)..\$(ProjectName)TS" Importance="high" />
+    <Copy SourceFiles="@(DigitalrootTSIOFiles)" DestinationFiles="@(DigitalrootTSIOFiles->'$(TargetDir)..\$(ProjectName)TS\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(DigitalrootReadMeFile)" DestinationFiles="@(DigitalrootReadMeFile->'$(TargetDir)..\$(ProjectName)TS\%(Filename)%(Extension)')" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" />
+    <GetAssemblyIdentity AssemblyFiles="$(TargetDir)$(TargetFileName)">
+      <Output TaskParameter="Assemblies" ItemName="DigitalrootAssemblyIdentities" />
+    </GetAssemblyIdentity>
+    <Message Text="Version = $([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))" Importance="high" />
+    <Message Text="Deleting $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
+    <Delete Files="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
+    <Message Text="Updating Thunderstore manifest.json" Importance="high" />
+    <PropertyGroup>
+      <InputFile>$(TargetDir)..\$(ProjectName)TS\manifest.json</InputFile>
+      <OutputFile>$(TargetDir)..\$(ProjectName)TS\manifest.json</OutputFile>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(OutputFile)" Lines="$([System.IO.File]::ReadAllText($(InputFile)).Replace('%VERSION_NUMBER%','$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3))'))" Overwrite="true" Encoding="ASCII" />
+    <Message Text="Creating Zip file $(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" Importance="high" />
+    <ZipDirectory SourceDirectory="$(TargetDir)..\$(ProjectName)TS" DestinationFile="$(TargetDir)..\$(ProjectName).v$([System.Version]::Parse(%(DigitalrootAssemblyIdentities.Version)).ToString(3)).ts.zip" />
   </Target>
   <Import Project="..\packages\Fody.6.5.3\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.3\build\Fody.targets')" />
 </Project>

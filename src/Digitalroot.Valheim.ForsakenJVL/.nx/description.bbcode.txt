@@ -1,0 +1,44 @@
+﻿[size=3][b][size=4]Summary[/size][/b]
+This is a port of [url=https://www.nexusmods.com/valheim/mods/799]Forsaken[/url] to [url=https://www.nexusmods.com/valheim/mods/1138]JVL[/url]   
+
+[size=3]Original Mod: [url=https://www.nexusmods.com/valheim/mods/799]https://www.nexusmods.com/valheim/mods/799[/url] 
+
+[b]Code is a complete rewrite.[/b]
+
+[b][size=4]License[/size][/b]
+JVL Version is released under: [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/blob/main/LICENSE]GNU Affero General Public License v3.0[/url]
+
+[b][size=4]ForsakenJVL[/size][/b]
+Go to [size=3][size=3][url=https://www.nexusmods.com/valheim/mods/799]https://www.nexusmods.com/valheim/mods/799[/url]﻿ [/size][/size]to learn what this mod does.
+
+[/size][size=3][b]Dependencies[/b]
+[/size][list]
+[*][size=3][url=https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/]BepInExPack Valheim[/url]﻿[/size]
+[*][size=3][url=https://github.com/Valheim-Modding/Jotunn]Jotunn (JVL)﻿[/url][/size]
+[/list][size=3]
+[b][size=4]Installation (manual only)[/size][/b]
+[/size][list=1]
+[*][size=3]Download the latest release archive (zip) file.[/size]
+[*][size=3]Extract the archive into <Steam Location>\steamapps\common\Valheim\BepInEx\plugins\[/size]
+[*][size=3]Go to [url=https://www.nexusmods.com/valheim/mods/799?tab=files]https://www.nexusmods.com/valheim/mods/799?tab=files[/url]﻿ and download the original mod.[/size]
+[*][size=3][color=#ffff00][size=5]Open the zip file and copy the file [b]forsakenmod [/b]to the same directory as [b]Digitalroot.Valheim.ForsakenJVL.dll[/b][/size][/color][/size]
+
+[/list][size=3]
+[size=4][b]Configuration [/b][/size][/size][/size]
+[list]
+[*][size=3]No need to configure.[/size]
+[/list]
+[b][size=4]Issues/Bugs[/size][/b]
+[size=3]Open an issue or bug on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/issues]issue board[/url]﻿﻿.[/size]
+
+[b][size=4]Questions[/size][/b][size=3]
+Ask a question on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/discussions]discussions board[/url]﻿﻿.[/size]
+
+[b][size=4]Support Me[/size][/b] @ [url=https://www.buymeacoffee.com/digitalroot]https://www.buymeacoffee.com/digitalroot[/url]
+
+[b][size=4]Thanks to[/size][/b]
+[size=3][url=https://www.nexusmods.com/valheim/users/1082594]v801[/url] for the mod.[/size]
+
+
+[center][size=3][b][color=#00ffff]Digitalroot can be found in the Odin Plus Team Discord[/color][/b][/size]
+[url=https://discord.gg/mbkPcvu9ax][img]https://digitalroot.net/img/odinplusdisc.png[/img][/url]﻿[/center]
