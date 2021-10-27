@@ -19,7 +19,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin, ITraceableLogging
   {
-    public const string Version = "1.1.0";
+    public const string Version = "1.2.0";
     public const string Name = "Digitalroot ForsakenJVL";
     public const string Guid = "digitalroot.valheim.mods.forsaken.jvl";
     public const string Namespace = "Digitalroot.Valheim." + nameof(ForsakenJVL);
@@ -134,6 +134,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
         itemDrop.m_itemData.m_shared.m_timedBlockBonus = 0f;
         itemDrop.m_itemData.m_shared.m_deflectionForce = 0f;
         itemDrop.m_itemData.m_shared.m_attackForce = 0f;
+        itemDrop.m_itemData.m_shared.m_damagesPerLevel.m_fire = 20f;
 
         ItemManager.Instance.AddItem(new CustomItem(prefab, false, new ItemConfig
         {
