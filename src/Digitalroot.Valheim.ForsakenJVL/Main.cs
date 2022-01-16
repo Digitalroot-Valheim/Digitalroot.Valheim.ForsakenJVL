@@ -17,12 +17,8 @@ namespace Digitalroot.Valheim.ForsakenJVL
   [BepInDependency(Jotunn.Main.ModGuid)]
   [BepInIncompatibility("com.bepinex.plugins.forsaken")]
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
-  public class Main : BaseUnityPlugin, ITraceableLogging
+  public partial class Main : BaseUnityPlugin, ITraceableLogging
   {
-    public const string Version = "1.2.1";
-    public const string Name = "Digitalroot ForsakenJVL";
-    public const string Guid = "digitalroot.valheim.mods.forsaken.jvl";
-    public const string Namespace = "Digitalroot.Valheim." + nameof(ForsakenJVL);
     [UsedImplicitly] public static ConfigEntry<int> NexusId;
     public static Main Instance;
     private AssetBundle _assetBundle;
