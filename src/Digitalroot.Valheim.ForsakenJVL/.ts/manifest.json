@@ -5,8 +5,8 @@
   "description": "A port of Forsaken to JVL",
   "version_number": "%VERSION_NUMBER%",
   "dependencies": [
-    "denikson-BepInExPack_Valheim-5.4.1600",
-    "ValheimModding-Jotunn-2.3.7"
+    "denikson-BepInExPack_Valheim-5.4.1700",
+    "ValheimModding-Jotunn-2.4.6"
   ],
   "website_url": "https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL"
 }

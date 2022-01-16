@@ -19,7 +19,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
   [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.Minor)]
   public class Main : BaseUnityPlugin, ITraceableLogging
   {
-    public const string Version = "1.2.0";
+    public const string Version = "1.2.1";
     public const string Name = "Digitalroot ForsakenJVL";
     public const string Guid = "digitalroot.valheim.mods.forsaken.jvl";
     public const string Namespace = "Digitalroot.Valheim." + nameof(ForsakenJVL);
@@ -47,7 +47,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
       {
         Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
 
-        var assetFile = new FileInfo(Path.Combine(BepInEx.Paths.PluginPath, "Digitalroot.Valheim.ForsakenJVL", "forsakenmod"));
+        var assetFile = new FileInfo(Path.Combine(new FileInfo(typeof(Main).Assembly.Location).DirectoryName ?? throw new InvalidOperationException("Unable to load assetFile."), "forsakenmod"));
 
         if (!assetFile.Exists)
         {
