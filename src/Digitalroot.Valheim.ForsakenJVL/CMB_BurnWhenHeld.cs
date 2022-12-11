@@ -15,7 +15,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         _timer = new System.Timers.Timer
         {
           AutoReset = true
@@ -34,7 +34,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         if (!Common.Utils.IsPlayerReady()) return;
         if (!Player.m_localPlayer.IsItemEquiped(gameObject.GetComponent<ItemDrop>().m_itemData)) return;
         Player.m_localPlayer.AddFireDamage(10);
@@ -48,7 +48,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     [UsedImplicitly]
     public void Start()
     {
-      Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+      Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
       _timer.Elapsed += TimerElapsed;
       _timer.Start();
     }
@@ -56,7 +56,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     [UsedImplicitly]
     private void OnDestroy()
     {
-      Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+      Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
       _timer.Elapsed -= TimerElapsed;
       _timer.Stop();
       _timer.Dispose();

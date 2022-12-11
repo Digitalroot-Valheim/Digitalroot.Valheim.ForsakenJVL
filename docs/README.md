@@ -24,10 +24,13 @@ Go to https://www.nexusmods.com/valheim/mods/799﻿ to learn what this mod does.
 ### Configuration 
 - No need to configure.
 
-Issues/Bugs
+### Known Issues
+1. Rimefang's secondary attack does not work and throws an error.
+
+## Issues/Bugs
 Open an issue or bug on the [issue board﻿﻿](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/issues).
 
-Questions
+## Questions
 Ask a question on the [discussions board﻿﻿](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/discussions).
 
 ### Support Me @ https://www.buymeacoffee.com/digitalroot

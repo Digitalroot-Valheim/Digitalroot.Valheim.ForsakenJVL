@@ -28,6 +28,10 @@ Go to [size=3][size=3][url=https://www.nexusmods.com/valheim/mods/799]https://ww
 [list]
 [*][size=3]No need to configure.[/size]
 [/list]
+[b][size=4]Known Issues[/size][/b]
+[list=1]
+[*]Rimefang's secondary attack does not work and throws an error.
+[/list]
 [b][size=4]Issues/Bugs[/size][/b]
 [size=3]Open an issue or bug on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/issues]issue board[/url]﻿﻿.[/size]
 
@@ -38,6 +42,7 @@ Ask a question on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Va
 
 [b][size=4]Thanks to[/size][/b]
 [size=3][url=https://www.nexusmods.com/valheim/users/1082594]v801[/url] for the mod.[/size]
+
 
 
 [center][size=3][b][color=#00ffff]Digitalroot can be found in the Odin Plus Team Discord[/color][/b][/size]

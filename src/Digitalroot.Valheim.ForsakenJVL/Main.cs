@@ -29,11 +29,11 @@ namespace Digitalroot.Valheim.ForsakenJVL
       NexusId = Config.Bind("General", "NexusID", 1538, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { IsAdminOnly = false, Browsable = false, ReadOnly = true }));
 #if DEBUG
       EnableTrace = true;
-      Log.RegisterSource(Instance);
 #else
       EnableTrace = false;
 #endif
-      Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+      Log.RegisterSource(Instance);
+      Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
     }
 
     [UsedImplicitly]
@@ -41,7 +41,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
 
         var assetFile = new FileInfo(Path.Combine(new FileInfo(typeof(Main).Assembly.Location).DirectoryName ?? throw new InvalidOperationException("Unable to load assetFile."), "forsakenmod"));
 
@@ -73,7 +73,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
 
         AddBattleaxeLightning();
         AddBowFrost();
@@ -102,7 +102,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_SpellFire/v801_SpellFire.prefab");
 
         if (prefab == null)
@@ -169,7 +169,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_ShieldFire/v801_ShieldFire.prefab");
 
         if (prefab == null)
@@ -241,7 +241,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_SwordLightning/v801_SwordLightning.prefab");
 
         if (prefab == null)
@@ -326,7 +326,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_SwordFire/v801_SwordFire.prefab");
 
         if (prefab == null)
@@ -425,7 +425,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_UnarmedFrost/v801_UnarmedFrostOH.prefab");
 
         if (prefab == null)
@@ -512,7 +512,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_UnarmedFrost/v801_UnarmedFrost.prefab");
 
         if (prefab == null)
@@ -602,7 +602,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/weapons/v801_KnifeFrost/v801_KnifeFrost.prefab");
 
         if (prefab == null)
@@ -686,7 +686,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
 
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_BattleaxeLightning/v801_BattleaxeLightning.prefab");
 
@@ -779,7 +779,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
 
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_BowFrost/v801_BowFrost.prefab");
 
@@ -855,7 +855,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
 
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_SledgeFire/v801_SledgeFire.prefab");
 
@@ -961,7 +961,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_SledgePoison/v801_SledgePoison.prefab");
 
         if (prefab == null)
@@ -1061,7 +1061,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
 
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_SpearSpirit/v801_SpearSpirit.prefab");
 
@@ -1147,7 +1147,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
     {
       try
       {
-        Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod().DeclaringType?.Name}.{MethodBase.GetCurrentMethod().Name}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         var prefab = _assetBundle.LoadAsset<GameObject>("Assets/Custom_Items/v801_UnarmedFenring/v801_UnarmedFenring.prefab");
 
         if (prefab == null)
