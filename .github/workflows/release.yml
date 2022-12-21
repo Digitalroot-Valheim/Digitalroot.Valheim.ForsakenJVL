@@ -10,8 +10,8 @@ on:
     paths-ignore:
       - '.github/**'
       - 'docs/**'
-      - '**/.ts/**'   
-      - '**/.nx/**'   
+      - '**/.ts/**'
+      - '**/.nx/**'
 
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
