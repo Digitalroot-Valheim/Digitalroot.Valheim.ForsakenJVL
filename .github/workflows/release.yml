@@ -37,4 +37,4 @@ jobs:
       ts-name: ForsakenJVL
       ts-description: "A port of Forsaken to JVL"
       ts-categories: "client-side server-side gear" #https://thunderstore.io/api/experimental/community/valheim/category/
-      ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.12.1
+      ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.12.4
