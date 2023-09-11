@@ -8,7 +8,9 @@ using Jotunn.Managers;
 using Jotunn.Utils;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Reflection;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Digitalroot.Valheim.ForsakenJVL
@@ -42,26 +44,51 @@ namespace Digitalroot.Valheim.ForsakenJVL
       try
       {
         Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        LoadAssetFile();
+        PrefabManager.OnVanillaPrefabsAvailable += AddCustomItems;
+      }
+      catch (Exception e)
+      {
+        Log.Error(Instance, e);
+      }
+    }
 
-        var assetFile = new FileInfo(Path.Combine(new FileInfo(typeof(Main).Assembly.Location).DirectoryName ?? throw new InvalidOperationException("Unable to load assetFile."), "forsakenmod"));
+    private async void LoadAssetFile()
+    {
+      try
+      {
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        const string ASSET_FILE_NAME = "forsakenmod";
+        var assetFile = new FileInfo(Path.Combine(new FileInfo(typeof(Main).Assembly.Location).DirectoryName ?? throw new InvalidOperationException("Unable to load assetFile."), ASSET_FILE_NAME));
 
         if (!assetFile.Exists)
         {
-          Log.Error(Instance, $"Unable to find asset file 'forsakenmod', please make sure 'forsakenmod' and 'Digitalroot.Valheim.ForsakenJVL.dll' are in {assetFile.DirectoryName}");
+          
+          HttpUtil.DownloadFileAsync(Properties.Resources.asseturl, assetFile);
+        }
+        
+        for (var i = 0; i < 36000; i++) // 36000 = 15m = 900000ms / 25ms = 36000 : (Total ms / ms to Delay = ticks of i++ to count.) 
+        {
+          assetFile.Refresh();
+          if (assetFile.Exists) break;
+          await Task.Delay(25);
+        }
+
+        if (!assetFile.Exists)
+        {
+          Log.Error(Instance, $"Unable to find asset file '{ASSET_FILE_NAME}', please make sure '{ASSET_FILE_NAME}' and 'Digitalroot.Valheim.ForsakenJVL.dll' are in {assetFile.DirectoryName}");
           Log.Error(Instance, $"Digitalroot.Valheim.ForsakenJVL is not loaded.");
           return;
         }
 
         _assetBundle = AssetUtils.LoadAssetBundle(assetFile.FullName);
 
-
-#if DEBUG
+        #if DEBUG
         foreach (var assetName in _assetBundle.GetAllAssetNames())
         {
           Log.Trace(Main.Instance, assetName);
         }
-#endif
-        PrefabManager.OnVanillaPrefabsAvailable += AddCustomItems;
+        #endif
       }
       catch (Exception e)
       {
@@ -74,6 +101,8 @@ namespace Digitalroot.Valheim.ForsakenJVL
       try
       {
         Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+
+        if (_assetBundle == null) return;
 
         AddBattleaxeLightning();
         AddBowFrost();
