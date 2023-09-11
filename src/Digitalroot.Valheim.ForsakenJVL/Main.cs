@@ -63,7 +63,6 @@ namespace Digitalroot.Valheim.ForsakenJVL
 
         if (!assetFile.Exists)
         {
-          
           HttpUtil.DownloadFileAsync(Properties.Resources.asseturl, assetFile);
         }
         
