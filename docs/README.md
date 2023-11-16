@@ -1,5 +1,5 @@
 ## Summary
-This is a port of <a href="https://www.nexusmods.com/valheim/mods/799">Forsaken</a> to JVL   
+This is a port of <a href="https://www.nexusmods.com/valheim/mods/799">Forsaken</a> to JvL   
  
 Original Mod: https://www.nexusmods.com/valheim/mods/799   
 
@@ -8,12 +8,12 @@ Original Mod: https://www.nexusmods.com/valheim/mods/799
 ## License
 JVL Version is released under: [**GNU Affero General Public License v3.0**](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/blob/main/LICENSE)
 
-## ForsakenJVL
+## ForsakenJvL
 Go to https://www.nexusmods.com/valheim/mods/799 to learn what this mod does.
 
 ### Dependencies
 - <a href="https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/"  target="_blank">BepInExPack Valheim</a>
-- <a href="https://github.com/Valheim-Modding/Jotunn" target="_blank">Jotunn (JVL)</a>
+- <a href="https://github.com/Valheim-Modding/Jotunn" target="_blank">Jotunn (JvL)</a>
 
 ### Installation (manual)
 1. Download the latest release archive (zip) file.
