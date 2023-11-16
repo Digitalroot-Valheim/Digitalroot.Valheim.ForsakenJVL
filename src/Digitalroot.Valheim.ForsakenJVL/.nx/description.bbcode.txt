@@ -9,7 +9,7 @@ This is a port of [url=https://www.nexusmods.com/valheim/mods/799]Forsaken[/url]
 JVL Version is released under: [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/blob/main/LICENSE]GNU Affero General Public License v3.0[/url]
 
 [b][size=4]ForsakenJVL[/size][/b]
-Go to [size=3][size=3][url=https://www.nexusmods.com/valheim/mods/799]https://www.nexusmods.com/valheim/mods/799[/url]﻿ [/size][/size]to learn what this mod does.
+Go to [size=3][size=3][url=https://www.nexusmods.com/valheim/mods/799]https://www.nexusmods.com/valheim/mods/799[/url] [/size][/size]to learn what this mod does.
 
 [/size][size=3][b]Dependencies[/b]
 [/size][list]

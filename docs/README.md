@@ -9,7 +9,7 @@ Original Mod: https://www.nexusmods.com/valheim/mods/799
 JVL Version is released under: [**GNU Affero General Public License v3.0**](https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.ForsakenJVL/blob/main/LICENSE)
 
 ## ForsakenJVL
-Go to https://www.nexusmods.com/valheim/mods/799﻿ to learn what this mod does.
+Go to https://www.nexusmods.com/valheim/mods/799 to learn what this mod does.
 
 ### Dependencies
 - <a href="https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/"  target="_blank">BepInExPack Valheim</a>
