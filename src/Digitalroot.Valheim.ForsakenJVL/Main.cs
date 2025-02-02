@@ -239,7 +239,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
             }
             , new RequirementConfig
             {
-              Item = Common.Names.Vanilla.ItemDropNames.Flametal
+              Item = Common.Names.Vanilla.ItemDropNames.FlametalNew
               , Amount = 40
               , AmountPerLevel = 12
             }
@@ -324,7 +324,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
             }
             , new RequirementConfig
             {
-              Item = Common.Names.Vanilla.ItemDropNames.Flametal
+              Item = Common.Names.Vanilla.ItemDropNames.FlametalNew
               , Amount = 60
               , AmountPerLevel = 60
             }
@@ -949,7 +949,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
           {
             new RequirementConfig
             {
-              Item = Common.Names.Vanilla.ItemDropNames.Flametal
+              Item = Common.Names.Vanilla.ItemDropNames.FlametalNew
               , Amount = 60
               , AmountPerLevel = 15
             }
