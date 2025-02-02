@@ -29,6 +29,7 @@
     </RestoreAdditionalProjectSources>
     <VersionPrefix>0.0.1</VersionPrefix>
     <Configurations>Debug;Release</Configurations>
+    <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
 
   <ItemGroup>
