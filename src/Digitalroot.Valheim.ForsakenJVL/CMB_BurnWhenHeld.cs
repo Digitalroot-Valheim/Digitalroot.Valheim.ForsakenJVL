@@ -37,7 +37,7 @@ namespace Digitalroot.Valheim.ForsakenJVL
         Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
         if (!Common.Utils.IsPlayerReady()) return;
         if (!Player.m_localPlayer.IsItemEquiped(gameObject.GetComponent<ItemDrop>().m_itemData)) return;
-        Player.m_localPlayer.AddFireDamage(10);
+        Player.m_localPlayer.AddFireDamage(10, -1);
       }
       catch (Exception ex)
       {
